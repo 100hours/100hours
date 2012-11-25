@@ -1,2 +1,16 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%h1 100 Hours
+%p David will write whatever you want, live, on webcam, while taking a vow of silence. It's all to raise money for Arvon and their children's literacy projects.
+
+.row
+  .span8
+    - if @document
+      %h2=@document.title
+      %p= @document.body
+    - else
+      %p.lead
+        Sorry, no document is currently active
+  .span4
+    %ul.unstyled
+      - @documents.each do |doc|
+        %li= doc.title
+
