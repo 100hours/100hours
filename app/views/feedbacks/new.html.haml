@@ -1,0 +1,17 @@
+= form_for :feedback, url: feedback_url, method: "post", class: "form-horizontal" do |f|
+  .control-group
+    = f.label "email", "Email", class: "control-label"
+    .controls
+      = f.text_field "email"
+  .control-group
+    = f.label "subject", "Subject", class: "control-label"
+    .controls
+      = f.text_field "subject"
+  .control-group
+    = f.label "body", "Message", class: "control-label"
+    .controls
+      = f.text_area "body"
+  .control-group
+    .controls
+      %button.btn{ type: "submit"} Post
+
