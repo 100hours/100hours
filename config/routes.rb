@@ -3,5 +3,6 @@ HundredHours::Application.routes.draw do
   resource :feedback, :only => [:new, :create, :show]
   match "about" => "pages#about"
   root :to => "home#index"
-  
+ 
+  mount HundredHours::API => "/" 
 end

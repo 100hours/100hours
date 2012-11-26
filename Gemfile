@@ -7,6 +7,8 @@ gem 'pg'
 gem 'haml'
 gem 'bootstrap-sass'
 
+gem 'grape' # For API
+
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
