@@ -8,6 +8,8 @@ gem 'haml'
 gem 'bootstrap-sass'
 
 gem 'grape' # For API
+gem "friendly_id", "~> 4.0.1"
+
 
 group :assets do
   gem 'sass-rails'
