@@ -10,6 +10,8 @@ gem 'bootstrap-sass'
 gem 'grape' # For API
 gem "friendly_id", "~> 4.0.1"
 
+gem 'pusher'
+
 
 group :assets do
   gem 'sass-rails'
@@ -17,7 +19,7 @@ group :assets do
   gem 'uglifier'
 end
 
-group :development, :test do 
+group :development, :test do
   gem 'quiet_assets'
   gem 'haml-rails'
   gem 'hpricot'
