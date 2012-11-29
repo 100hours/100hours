@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 pusher = new Pusher('8146487894a3cc81758c')
-channel = pusher.subscribe('test_channel')
+channel = pusher.subscribe(currentDocumentId)
 channel.bind 'update', (upload) ->
   console.log "received update - #{upload.body}"
   $('#document-body').html(upload.body)
