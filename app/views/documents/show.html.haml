@@ -1,8 +1,10 @@
 %h1= @document.title
 
-%p#document-body
+#document-body
   = raw @document.body
 
-%script(type="text/javascript")
-  currentDocumentId =
-  = @document.id
+- content_for :end_javascript do
+  :javascript
+    App.require('documents/show', {
+      currentDocumentId: '#{@document.id}'
+    })
