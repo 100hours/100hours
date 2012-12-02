@@ -1,8 +1,8 @@
-%h1 100 Hours
-%p David will write whatever you want, live, on webcam, while taking a vow of silence. It's all to raise money for Arvon and their children's literacy projects.
+#viewer
 
-- for document in @documents
-  .row
-    .span8
-      = link_to document.title, document
 
+- content_for :end_javascript do
+  :javascript
+    HundredHours.require('viewer', {
+      // currentDocumentId: '#{@document.id}'
+    })

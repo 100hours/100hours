@@ -14,14 +14,11 @@
 #= require jquery_ujs
 #= require bootstrap
 #= require_tree ./vendor
+#= require handlebars
+#= require ember
+#= require ember-data
 #= require_self
-#= require_tree .
+#= require hundred_hours
+#= require_tree ./inline
 
-@App = {}
-
-App.register = (label, callback) ->
-  App.fragments = App.fragments || {}
-  App.fragments[label] = callback
-
-App.require = (label, data) ->
-  App.fragments[label].call(window,data)
+@HundredHours = {}

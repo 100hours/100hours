@@ -11,7 +11,7 @@ gem 'grape' # For API
 gem "friendly_id", "~> 4.0.1"
 
 gem 'pusher'
-
+gem 'ember-rails'
 
 group :assets do
   gem 'sass-rails'
