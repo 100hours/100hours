@@ -3,12 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 HundredHours.register 'viewer', (data) ->
-
-  App = Ember.Application.create
-    rootElement: '#viewer'
-  window.App = App
-
-
   # pusher = new Pusher('8146487894a3cc81758c')
   # channel = pusher.subscribe(data.currentDocumentId)
   # channel.bind 'update', (upload) ->

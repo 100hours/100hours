@@ -1,0 +1,1 @@
+HundredHours.DocumentsController = Ember.Controller.extend()

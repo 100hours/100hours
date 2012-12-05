@@ -13,12 +13,8 @@
 #= require jquery
 #= require jquery_ujs
 #= require bootstrap
-#= require_tree ./vendor
 #= require handlebars
 #= require ember
-#= require ember-data
-#= require_self
+#= require_tree ./vendor
 #= require hundred_hours
 #= require_tree ./inline
-
-@HundredHours = {}

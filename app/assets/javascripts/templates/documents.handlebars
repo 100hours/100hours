@@ -1,0 +1,6 @@
+Docs
+<ul>
+  {{#each document in content}}
+  <li> <a {{action goToDocument document href=true}}> {{document.title}} </a> - {{document.active}} </li>
+  {{/each}}
+</ul>
