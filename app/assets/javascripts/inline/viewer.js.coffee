@@ -8,6 +8,7 @@ HundredHours.register 'viewer', (data) ->
     rootElement: '#viewer'
   window.App = App
 
+
   # pusher = new Pusher('8146487894a3cc81758c')
   # channel = pusher.subscribe(data.currentDocumentId)
   # channel.bind 'update', (upload) ->
