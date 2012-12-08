@@ -1,8 +1,10 @@
+body
+  background: #f1ede4
+
+
 #sidebar
-  width: 200px
-  height: 600px
-  margin: 0px 10px 0px 0px
   float: left
+  margin-left: 0
 
   #document-list-header
     height: 54px
@@ -44,16 +46,14 @@
 #document-wrapper
   position: relative
   float: left
-  width: 600px
-  background: #edf
 
   #active-document-view, #selected-document-view
     position: absolute
     top: 0
     left: 0
-    width: 600px
-    height: 700px
-    padding: 0 30px
+    width: 100%
+    min-height: 200px
+    // padding: 0 30px
     float: left
     background: #fff
     border: thin solid #ccc
@@ -63,11 +63,16 @@
     line-height: 32px
 
     h1
-      margin: 9px 0
+      margin: 9px 30px
       font-size: 29px
+      border-bottom: 1px solid #ccc
+      padding-bottom: 10px
 
       a
         text-decoration: underline
+
+    #active-document-body
+      margin: 0 30px
 
   #active-document-view.background
     background: #fcfcfc
