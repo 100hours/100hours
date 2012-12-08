@@ -1,6 +1,41 @@
-Docs
-<ul>
-  {{#each document in content}}
-  <li> <a {{action goToDocument document href=true}}> {{document.title}} </a> - {{document.active}} </li>
-  {{/each}}
-</ul>
+
+Viewing active? {{viewingActiveDocument}}
+<div id="sidebar">
+  <div id="document-list-header">
+    {{#if viewingActiveDocument}}
+      David is writing ->
+    {{else}}
+      <a {{action goToIndex}}> <- Watch the live document </a>
+    {{/if}}
+  </div>
+  <div id="document-list">
+    <ul>
+      <lh> All Documents </lh>
+      {{#each document in content}}
+      <li {{bindAttr class="document.active"}}> <a {{action goToDocument document href=true}}> {{document.title}} </a> </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div id="document-wrapper">
+  {{#if viewingActiveDocument}}
+
+    <div id="active-document-view">
+      <h1> {{{ activeDocument.title }}} </h1>
+      <div id="active-document-body">
+        {{{ activeDocument.body }}}
+      </div>
+    </div>
+
+  {{else}}
+
+    <div id="active-document-view" class="background">
+      <h1> <a {{action goToIndex}}> {{{ activeDocument.title }}} </a> </h1>
+    </div>
+    <div id="selected-document-view">
+      <h1> {{{ selectedDocument.title }}} </h1>
+      {{{ selectedDocument.body }}}
+    </div>
+
+  {{/if}}
+</div>
