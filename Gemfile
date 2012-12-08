@@ -13,6 +13,8 @@ gem "friendly_id", "~> 4.0.1"
 gem 'pusher'
 gem 'ember-rails'
 
+gem 'newrelic_rpm'
+
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
