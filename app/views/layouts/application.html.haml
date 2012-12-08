@@ -9,6 +9,7 @@
         = csrf_meta_tags
         <script type="text/javascript" src="//use.typekit.net/fvk0nfi.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        = render :partial => "analytics"
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
     %header.navbar.navbar-fixed-top
