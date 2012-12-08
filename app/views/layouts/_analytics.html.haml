@@ -1,6 +1,7 @@
 :javascript
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '#{ENV['GOOGLE_ANALYTICS_CODE']}']);
+  _gaq.push(['_setDomainName', '#{ENV['GOOGLE_ANALYTICS_DOMAIN']}']);
   _gaq.push(['_trackPageview']);
   (function() {
     var ga = document.createElement('script');
