@@ -1,4 +1,4 @@
-class AddFeedback < ActiveRecord::Migration
+class AddFeedbacks < ActiveRecord::Migration
   def up
     create_table :feedbacks do |f|
       f.string :email, :subject

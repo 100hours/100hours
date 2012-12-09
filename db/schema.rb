@@ -11,18 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126134913) do
+ActiveRecord::Schema.define(:version => 20121209222210) do
 
   create_table "documents", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "version"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "slug"
   end
-
-  add_index "documents", ["slug"], :name => "index_documents_on_slug", :unique => true
 
   create_table "feedbacks", :force => true do |t|
     t.string   "email"
