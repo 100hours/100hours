@@ -75,6 +75,6 @@ module HundredHours
     config.assets.version = '1.0'
 
     # feedback notification list
-    config.notify_list = ENV['NOTIFY_LIST'].split(':')
+    config.notify_list = ENV['NOTIFY_LIST'] ? ENV['NOTIFY_LIST'].split(':') : []
   end
 end
