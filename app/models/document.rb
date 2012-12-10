@@ -3,9 +3,6 @@ class Document < ActiveRecord::Base
 
   default_scope order("updated_at DESC")
 
-  # # extend FriendlyId
-  # friendly_id :title, :use => :slugged
-
   def self.active
     self.first
   end
