@@ -1,16 +1,22 @@
-= form_for :feedback, url: feedback_url, method: "post", class: "form-horizontal" do |f|
+%p
+  Feel free to send me a message. 
+  I won’t be able to reply privately during the 100 hours, but I’ll read your message and will respond live on the site if appropriate.
+%p
+  If you’re a member of the press, we could even run an interview on the site.
+
+= form_for :feedback, url: feedback_url, method: "post", html: { class: "form-horizontal" } do |f|
   .control-group
     = f.label "email", "Email", class: "control-label"
     .controls
-      = f.text_field "email"
+      = f.text_field "email", class: "span6"
   .control-group
     = f.label "subject", "Subject", class: "control-label"
     .controls
-      = f.text_field "subject"
+      = f.text_field "subject", class: "span6"
   .control-group
     = f.label "body", "Message", class: "control-label"
     .controls
-      = f.text_area "body"
+      = f.text_area "body", rows: "7", class: "span6"
   .control-group
     .controls
       %button.btn{ type: "submit"} Post
