@@ -4,6 +4,4 @@ HundredHours::Application.routes.draw do
   match "about" => "pages#about"
   match "style" => "pages#style"
   root :to => "home#index"
-
-  mount HundredHours::API => "/"
 end
