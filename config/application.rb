@@ -74,6 +74,10 @@ module HundredHours
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # this is a workaround for failed asset compilation in Heroku 
+    # see: https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar#assetsprecompile-failures
+    config.assets.initialize_on_precompile = false
+
     # feedback notification list
     config.notify_list = ENV['NOTIFY_LIST'] ? ENV['NOTIFY_LIST'].split(':') : []
   end
