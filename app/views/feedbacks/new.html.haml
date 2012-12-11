@@ -4,19 +4,23 @@
 %p
   If you’re a member of the press, we could even run an interview on the site.
 
-= form_for :feedback, url: feedback_url, method: "post", html: { class: "form-horizontal" } do |f|
-  .control-group
+= form_for @feedback, url: feedback_url, html: { class: "form-horizontal" } do |f|
+  %div{ class: "control-group #{@feedback.errors.include?(:email) ? "error" : ""}"}
     = f.label "email", "Email", class: "control-label"
     .controls
       = f.text_field "email", class: "span6"
+      - if @feedback.errors.include?(:email)
+        %span.help-inline Please enter your email address
   .control-group
     = f.label "subject", "Subject", class: "control-label"
     .controls
       = f.text_field "subject", class: "span6"
-  .control-group
+  %div{ class: "control-group #{@feedback.errors.include?(:body) ? "error" : ""}"}
     = f.label "body", "Message", class: "control-label"
     .controls
       = f.text_area "body", rows: "7", class: "span6"
+      - if @feedback.errors.include?(:body)
+        %span.help-inline Please enter your feedback here
   .control-group
     .controls
       %button.btn{ type: "submit"} Post

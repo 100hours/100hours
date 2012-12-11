@@ -5,10 +5,17 @@ class FeedbacksController < ApplicationController
 
   def new
     # nothing to be done here
+    @feedback = Feedback.new
   end
 
   def create
-    Feedback.create(params[:feedback])
-    redirect_to root_url, notice: "Thank you, your feedback has been recorded."
+    @feedback = Feedback.new(params[:feedback])
+    respond_to do |format|
+      if @feedback.save
+        format.html { redirect_to root_url, notice: "Thank you, your feedback has been recorded." }
+      else
+        format.html { render action: "new" }
+      end
+    end
   end
 end
