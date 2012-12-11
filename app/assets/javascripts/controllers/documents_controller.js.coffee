@@ -1,5 +1,8 @@
 HundredHours.DocumentsController = Ember.ArrayController.extend
 
+  sortProperties: ['updated_at']
+  sortAscending: false
+
   init: ->
     # Setup Pusher
     pusher = new Pusher('8146487894a3cc81758c')
@@ -12,6 +15,7 @@ HundredHours.DocumentsController = Ember.ArrayController.extend
         doc.setProperties
           title: payload.title
           body: payload.body
+          updated_at: new Date(payload.updated_at)
       else
         doc = HundredHours.Models.Document.createRecord(payload)
       # Whatever happens, set the active document to be this update
