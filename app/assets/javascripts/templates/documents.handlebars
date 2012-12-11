@@ -9,7 +9,7 @@
   <div id="document-list">
     <ul>
       <lh> All Documents </lh>
-      {{#each document in content}}
+      {{#each document in controller}}
       <li {{bindAttr class="document.active"}}> <a {{action goToDocument document href=true}}> {{document.title}} </a> </li>
       {{/each}}
     </ul>
