@@ -18,12 +18,6 @@ HundredHours.DocumentsController = Ember.ArrayController.extend
           updated_at: new Date(payload.updated_at)
       else
         doc = HundredHours.Models.Document.createRecord(payload)
-      # Whatever happens, set the active document to be this update
-      @set('activeDocumentId', payload.id)
-
-  activeDocumentId: (->
-    @get('firstObject.id')
-  ).property('@each.id')
 
   show: (doc) ->
     @hideAll()
@@ -41,13 +35,7 @@ HundredHours.DocumentsController = Ember.ArrayController.extend
       item.get('selected') == true
   ).property('@each.selected')
 
-  # The document being worked on by David
+  # The active document is the most recent document
   activeDocument: (->
-    @get('content').find (item) =>
-      item.get('id') == @get('activeDocumentId')
-  ).property('activeDocumentId', 'content.length')
-
-  # Is the user viewing the same document that david is working on?
-  viewingActiveDocument: (->
-    !@get('selectedDocument.id')
-  ).property('selectedDocument', 'activeDocument')
+    @get('firstObject')
+  ).property('firstObject')
