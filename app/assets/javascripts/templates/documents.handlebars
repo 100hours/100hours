@@ -10,22 +10,14 @@
     <ul>
       <lh> All Documents </lh>
       {{#each document in controller}}
-      <li {{bindAttr class="document.active"}}> <a {{action goToDocument document href=true}}> {{document.title}} </a> </li>
+      <li {{bindAttr class="document.selected"}}> <a {{action goToDocument document href=true}}> {{document.title}} </a> </li>
       {{/each}}
     </ul>
   </div>
 </div>
 <div id="document-wrapper" class="span9">
-  {{#if viewingActiveDocument}}
 
-    <div id="active-document-view">
-      <h1> {{{ activeDocument.title }}} </h1>
-      <div id="active-document-body">
-        {{{ activeDocument.body }}}
-      </div>
-    </div>
-
-  {{else}}
+  {{#if selectedDocument}}
 
     <div id="active-document-view" class="background">
       <h1> <a {{action goToIndex}}> {{{ activeDocument.title }}} </a> </h1>
@@ -34,6 +26,15 @@
       <h1> {{{ selectedDocument.title }}} </h1>
       <div id="active-document-body">
         {{{ selectedDocument.body }}}
+      </div>
+    </div>
+
+  {{else}}
+
+    <div id="active-document-view">
+      <h1> {{{ activeDocument.title }}} </h1>
+      <div id="active-document-body">
+        {{{ activeDocument.body }}}
       </div>
     </div>
 

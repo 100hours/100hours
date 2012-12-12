@@ -27,19 +27,19 @@ HundredHours.DocumentsController = Ember.ArrayController.extend
 
   show: (doc) ->
     @hideAll()
-    doc.set('active', true)
+    doc.set('selected', true)
 
   hideAll: ->
     @get('content').forEach (item) ->
-      item.set('active', null)
+      item.set('selected', null)
 
   # Computed properties ---------------------------------------
 
   # The currently selected/highlighted/clicked on document
   selectedDocument: (->
     @get('content').find (item) ->
-      item.get('active') == true
-  ).property('content.@each.active')
+      item.get('selected') == true
+  ).property('@each.selected')
 
   # The document being worked on by David
   activeDocument: (->
