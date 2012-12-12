@@ -21,8 +21,9 @@ HundredHours.DocumentsController = Ember.ArrayController.extend
       # Whatever happens, set the active document to be this update
       @set('activeDocumentId', payload.id)
 
-
-  activeDocumentId: "1" # TODO: Don't assume that the first document has an ID of 1
+  activeDocumentId: (->
+    @get('firstObject.id')
+  ).property('@each.id')
 
   show: (doc) ->
     @hideAll()
