@@ -7,7 +7,7 @@ HundredHours.DocumentsController = Ember.ArrayController.extend
     # Setup Pusher
     pusher = new Pusher('8146487894a3cc81758c')
     @set('pusher', pusher)
-    channel = pusher.subscribe('main_channel')
+    channel = pusher.subscribe('<%= Rails.env %>_main_channel')
     channel.bind 'update', (payload) =>
       # TODO: Clean up this big ugly chunk of procedural code
       doc = @content.find((item) => item.get('id') == payload.id)
