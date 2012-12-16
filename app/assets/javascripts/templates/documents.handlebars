@@ -1,27 +1,13 @@
-<div id="sidebar" class="span3">
-  <div id="document-list-header">
-    {{#if viewingActiveDocument}}
-      David is writing ->
-    {{else}}
-      <a {{action goToIndex}}> <- Watch the live document </a>
-    {{/if}}
-  </div>
-  <div id="document-list">
-    <ul>
-      <lh> All Documents </lh>
-      {{#each document in controller}}
-      <li {{bindAttr class="document.selected"}}> <a {{action goToDocument document href=true}}> {{document.title}} </a> </li>
-      {{/each}}
-    </ul>
-  </div>
-</div>
-<div id="document-wrapper" class="span9">
+<div id="document-wrapper" class="span8">
 
   {{#if selectedDocument}}
 
-    <div id="active-document-view" class="background">
-      <h1> <a {{action goToIndex}}> {{{ activeDocument.title }}} </a> </h1>
-    </div>
+    <a href="#index" {{action goToIndex}}>
+      <div id="active-document-view" class="background">
+        <div id="active-tag" class="btn btn-primary"><i class="icon-arrow-left icon-white"></i>View live document</div>
+        <h1>  {{{ activeDocument.title }}} </h1>
+      </div>
+    </a> 
     <div id="selected-document-view">
       <h1> {{{ selectedDocument.title }}} </h1>
       <div id="active-document-body">
@@ -32,11 +18,27 @@
   {{else}}
 
     <div id="active-document-view">
+      <div id="active-tag" class="btn btn-primary disabled">Live</div>
       <h1> {{{ activeDocument.title }}} </h1>
+
       <div id="active-document-body">
         {{{ activeDocument.body }}}
       </div>
     </div>
 
   {{/if}}
+</div>
+
+<div id="sidebar" class="span4">
+  <a href="http://www.justgiving.com/100hoursofsolitude" id="request-button" class="btn btn-success"> Make a request </a>
+  <div id="document-list">
+    <div id="document-search">
+      Pevious documents
+    </div>
+    <ul>
+      {{#each document in controller}}
+      <li {{bindAttr class="document.selected"}}> <a {{action goToDocument document href=true}}> {{document.title}} </a> </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>
