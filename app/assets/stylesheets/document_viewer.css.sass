@@ -14,9 +14,6 @@
   margin-left: 0
 
   #active-document-view, #selected-document-view
-    position: absolute
-    top: 0
-    left: 0
     width: 100%
     min-height: 484px
     float: left
@@ -54,9 +51,13 @@
     background: #fcfcfc
 
   #selected-document-view
+    position: absolute
     top: 60px
     left: 15px
     box-shadow: 0px 0px 15px rgba(0,0,0,0.2)
+
+    #active-tag
+      display: none
 
 
 #sidebar
@@ -103,3 +104,28 @@
       font-size: 18px
       text-decoration: underline
 
+@media (max-width: 767px)
+  
+  // Hide the background document
+  #active-document-view.background
+    display: none
+
+  #document-wrapper 
+    float: none
+    +clearfix
+
+    #active-document-view, #selected-document-view
+      position: relative
+      top: 0px
+      left: 0px
+      min-height: 0px
+      font-size: 16px
+      #active-tag
+        display: block
+
+  #sidebar 
+    margin-top: 10px
+    #document-list
+      ul
+        max-height: none
+        overflow: visible
