@@ -6,6 +6,8 @@ gem 'thin'
 gem 'pg'
 gem 'haml'
 gem 'bootstrap-sass'
+gem 'bourbon'
+
 
 gem 'pusher'
 gem 'ember-rails'
