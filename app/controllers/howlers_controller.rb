@@ -2,6 +2,7 @@ class HowlersController < ApplicationController
   def howl
     howler = Howler.find_by_url(params[:id])
     if howler && howler.play!
+      logger.warn "Howler #{howler.id} triggered!"
       Pusher.trigger(pusher_channel, 'howl', {})
       redirect_to root_url, notice: "Thank you for waking up David!"
     else
