@@ -8,6 +8,8 @@ gem 'haml'
 gem 'bootstrap-sass'
 gem 'bourbon'
 
+gem "rack-noie", :require => "noie"
+
 
 gem 'pusher'
 gem 'ember-rails'

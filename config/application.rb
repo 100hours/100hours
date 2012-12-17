@@ -80,5 +80,7 @@ module HundredHours
 
     # feedback notification list
     config.notify_list = ENV['NOTIFY_LIST'] ? ENV['NOTIFY_LIST'].split(':') : []
+
+    config.middleware.use Rack::NoIE, { minimum: 9 }
   end
 end
