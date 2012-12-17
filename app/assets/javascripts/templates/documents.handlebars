@@ -34,11 +34,16 @@
   <a href="http://www.justgiving.com/100hoursofsolitude" id="request-button" class="btn btn-success"> Make a request </a>
   <div id="document-list">
     <div id="document-search">
-      Pevious documents
+      {{view Ember.TextField valueBinding="controller.searchTerm" placeholder="Search all documents" classNames="span3 input-medium search-query"}}
     </div>
     <ul>
+      {{#if controller.searchTerm}}
+        <a {{action clearSearchTerm target="controller"}}> <li id="view-all"> <<  View all documents </li> </a>
+      {{/if}}
       {{#each document in controller}}
-      <li {{bindAttr class="document.selected"}}> <a {{action goToDocument document href=true}}> {{document.title}} </a> </li>
+        {{#if document.isVisible}}
+           <a {{action goToDocument document href=true}}><li {{bindAttr class="document.selected"}}>  {{document.title}} </li> </a> 
+        {{/if}}
       {{/each}}
     </ul>
   </div>
