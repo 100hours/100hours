@@ -112,7 +112,6 @@ GEM
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
-    rack-noie (1.0)
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.2)
@@ -204,7 +203,6 @@ DEPENDENCIES
   pg
   pusher
   quiet_assets
-  rack-noie
   rails (= 3.2.9)
   rspec-rails
   ruby_parser
