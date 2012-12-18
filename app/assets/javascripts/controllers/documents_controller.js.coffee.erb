@@ -10,13 +10,15 @@ HundredHours.DocumentsController = Ember.ArrayController.extend
     channel = pusher.subscribe('<%= Rails.env %>_main_channel')
     channel.bind 'update', (payload) =>
       # TODO: Clean up this big ugly chunk of procedural code
+      payload.updated_at = new Date(payload.updated_at)
       doc = @content.find((item) => item.get('id') == payload.id)
       if doc
         doc.setProperties
           title: payload.title
           body: payload.body
-          updated_at: new Date(payload.updated_at)
+          updated_at: payload.updated_at
       else
+
         doc = HundredHours.Models.Document.createRecord(payload)
 
   show: (doc) ->
