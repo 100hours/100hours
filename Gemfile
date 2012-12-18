@@ -7,6 +7,7 @@ gem 'pg'
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'bourbon'
+gem 'htmlentities'
 
 gem 'pusher'
 gem 'ember-rails'

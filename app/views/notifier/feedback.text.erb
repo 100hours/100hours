@@ -1,4 +1,4 @@
 Hi,
 <%= @message.email %> just left the following feedback from the 100 hours website:
 
-<%= @message.body %>
+<%= HTMLEntities.new.decode(@message.body) %>
