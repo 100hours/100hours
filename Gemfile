@@ -25,7 +25,7 @@ group :development, :test do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'rspec-rails'
-  gem 'capybara'
+  gem 'capybara', '>= 2.0.1'
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'factory_girl_rails'
